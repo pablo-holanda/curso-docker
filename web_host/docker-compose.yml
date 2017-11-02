@@ -1,0 +1,9 @@
+version: '2'
+
+services:
+  nginx:
+    container_name: nginx
+    build: .
+    ports:
+      - "80:80"
+      - "443:443"
