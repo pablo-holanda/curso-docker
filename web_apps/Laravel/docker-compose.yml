@@ -1,0 +1,6 @@
+version: '2'
+
+services:
+  laravel_app:
+    container_name: laravel_app
+    build: .
