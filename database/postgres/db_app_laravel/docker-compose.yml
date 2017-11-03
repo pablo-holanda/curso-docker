@@ -1,0 +1,22 @@
+version: '2'
+
+services:
+  pg_app_laravel:
+    restart: always
+    container_name: pg_app_laravel
+    image: postgres:alpine
+    environment:
+      - POSTGRES_USER=laravel_user
+      - POSTGRES_PASSWORD=password
+      - POSTGRES_DB=laravel_db
+    volumes:
+      - db_laravel:/var/lib/postgresql/data/
+    networks:
+      - db
+networks:
+  db:
+    external:
+      name: db_app_laravel
+volumes:
+  db_laravel:
+    external: true

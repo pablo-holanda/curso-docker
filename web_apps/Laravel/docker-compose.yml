@@ -6,7 +6,18 @@ services:
     build: .
     networks:
       - default
+      - db
+    volumes:
+      - web_apps:/apps
 networks:
   default:
     external:
       name: web_network
+  db:
+    external:
+      name: db_app_laravel
+volumes:
+  web_apps:
+    external: true
+  laravel_data:
+    external: true
