@@ -2,4 +2,12 @@ version: '2'
 
 services:
   redis:
+    container_name: redis
     image: redis:alpine
+    restart: always
+    networks:
+      - default
+networks:
+  default:
+    external:
+      name: web_network
